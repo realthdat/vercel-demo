@@ -1,0 +1,14 @@
+[
+  {
+    "bank_name": "Ngân Hàng ABC",
+    "account_number": "123456789",
+    "cardholder_name": "Nguyễn Văn A",
+    "status": "active"
+  },
+  {
+    "bank_name": "Ngân Hàng XYZ",
+    "account_number": "987654321",
+    "cardholder_name": "Trần Thị B",
+    "status": "inactive"
+  }
+]

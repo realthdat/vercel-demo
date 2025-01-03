@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiểm Tra Thông Tin Chủ Thẻ</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Kiểm Tra Thông Tin Chủ Thẻ</h2>
+
+    <label for="bank-name">Tên Ngân Hàng:</label>
+    <input type="text" id="bank-name" placeholder="Nhập tên ngân hàng" />
+
+    <label for="account-number">Số Tài Khoản:</label>
+    <input type="text" id="account-number" placeholder="Nhập số tài khoản" />
+
+    <button onclick="checkCardholderInfo()">Kiểm Tra</button>
+
+    <div id="result" class="result"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
