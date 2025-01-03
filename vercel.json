@@ -2,18 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "public/index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "api/check-card.js",
+      "src": "api/*.js",
       "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/check-card.js"
     }
   ]
 }

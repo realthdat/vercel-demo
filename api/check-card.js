@@ -1,18 +1,24 @@
 const fs = require("fs");
 const path = require("path");
 
+// Đọc tệp JSON chứa thông tin khách hàng
+const dataFilePath = path.join(__dirname, "../data/data.json");
+
 module.exports = async (req, res) => {
   if (req.method === "POST") {
     const { bankName, accountNumber } = req.body;
 
-    // Read the data from the file
-    try {
-      const data = await fs.promises.readFile(
-        path.join(__dirname, "../data.json"),
-        "utf8"
-      );
-      const customers = JSON.parse(data);
+    // Đọc dữ liệu từ tệp JSON
+    fs.readFile(dataFilePath, "utf8", (err, data) => {
+      if (err) {
+        return res
+          .status(500)
+          .json({ success: false, message: "Lỗi khi đọc dữ liệu." });
+      }
 
+      const customers = JSON.parse(data); // Chuyển dữ liệu JSON thành object
+
+      // Tìm khách hàng theo tên ngân hàng và số tài khoản
       const customer = customers.find(
         (item) =>
           item.bank_name === bankName && item.account_number === accountNumber
@@ -30,11 +36,7 @@ module.exports = async (req, res) => {
             message: "Không tìm thấy thông tin hợp lệ.",
           });
       }
-    } catch (error) {
-      res
-        .status(500)
-        .json({ success: false, message: "Có lỗi khi đọc dữ liệu." });
-    }
+    });
   } else {
     res.status(405).json({ success: false, message: "Method Not Allowed" });
   }

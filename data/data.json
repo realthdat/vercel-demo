@@ -1,0 +1,12 @@
+[
+  {
+    "bank_name": "Vietcombank",
+    "account_number": "123456",
+    "cardholder_name": "Nguyen Thi A"
+  },
+  {
+    "bank_name": "BIDV",
+    "account_number": "654321",
+    "cardholder_name": "Tran Thi B"
+  }
+]
